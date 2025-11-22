@@ -1,0 +1,71 @@
+substrate,id,count
+amino acid:amino acid,0,3216
+amino acid:peptide,1,1029
+amino acid:protein,2,9202
+amino acid:others,3,45
+nucleic acid:DNA,4,944
+nucleic acid:RNA,5,1679
+nucleic acid:nucleotide,6,1217
+nucleic acid:nucleoside,7,236
+nucleic acid:base,8,412
+sugar:oligosaccharide,9,321
+sugar:monosaccharide,10,1492
+sugar:disaccharide,11,602
+sugar:polysaccharide,12,481
+sugar:UDP-sugar,13,301
+sugar:glucoside,14,331
+sugar:hexose phosphate,15,290
+sugar:others,16,212
+lipid:phospholipid,17,763
+lipid:sphingolipid,18,423
+lipid:cholesterol,19,721
+lipid:bile acid,20,298
+lipid:fatty acid,21,216
+lipid:others,22,881
+cation:proton,23,8486
+cation:calcium,24,2125
+cation:potassium,25,2707
+cation:sodium,26,4187
+cation:zinc,27,1119
+cation:ammonium,28,198
+cation:iron,29,1143
+cation:copper,30,396
+cation:lithium,31,104
+cation:magnesium,32,470
+cation:cobalt,33,206
+cation:barium,34,60
+cation:strontium,35,80
+cation:silver,36,58
+cation:cadmium,37,191
+cation:rubidium,38,88
+cation:caesium,39,55
+cation:manganese,40,984
+cation:nickel,41,150
+cation:lead,42,46
+cation:mercury,43,63
+cation:anthocyanin cation,44,91
+cation:others,45,2454
+anion:sulfate,46,225
+anion:nitrate,47,101
+anion:phosphate,48,1106
+anion:chloride,49,2022
+anion:bromide,50,326
+anion:iodide,51,340
+anion:hydrogencarbonate,52,106
+anion:arsenite,53,166
+anion:selenite,54,49
+anion:thiosulfate,55,115
+anion:tungstate,56,31
+anion:sulfurous acid,57,64
+anion:glycerol 1-phosphate,58,321
+anion:2-oxoglutarate,59,62
+anion:nitric acid,60,207
+anion:aspartate,61,257
+anion:malate,62,260
+anion:fumarate,63,71
+anion:oxaloacetate,64,57
+anion:superoxide,65,63
+anion:oxalate,66,46
+anion:others,67,1409
+electron:electron,68,3540
+others:others,69,16442

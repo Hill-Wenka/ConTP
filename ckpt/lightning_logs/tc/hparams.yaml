@@ -1,0 +1,100 @@
+config:
+  project: ConTP_TC
+  seed: 42
+  tokenization:
+    alphabet: ESM-1b
+    truncation_seq_length: null
+  train_dataloader:
+    batch_size: 100
+    num_workers: 50
+    shuffle: true
+    drop_last: false
+    pin_memory: true
+    persistent_workers: true
+  valid_dataloader:
+    batch_size: 5000
+    num_workers: 30
+    shuffle: false
+    pin_memory: true
+    persistent_workers: true
+  test_dataloader:
+    batch_size: 5000
+    num_workers: 20
+    shuffle: false
+    pin_memory: false
+    persistent_workers: false
+  predict_dataloader:
+    batch_size: 5000
+    num_workers: 20
+    shuffle: false
+    pin_memory: false
+    persistent_workers: false
+  trainer:
+    max_epochs: 500
+    accelerator: gpu
+    strategy: auto
+    devices: 1
+    deterministic: false
+    benchmark: true
+    sync_batchnorm: true
+    log_every_n_steps: 1
+    check_val_every_n_epoch: 5
+    fast_dev_run: false
+    num_sanity_val_steps: 2
+    enable_model_summary: true
+    reload_dataloaders_every_n_epochs: 0
+    gradient_clip_val: 1.0
+    gradient_clip_algorithm: norm
+    enable_checkpointing: true
+    accumulate_grad_batches: 1
+  logger:
+    save_dir: ./ckpt/contrastive/
+    name: lightning_logs
+  progress_bar_callback:
+    refresh_rate: 1
+    process_position: 0
+  ckpt_callback:
+    filename: epoch={epoch:02d}, step={step:03d}, loss={valid/loss_epoch:.3f}, wP={valid/weighted_precision_epoch:.2f},
+      wR={valid/weighted_recall_epoch:.2f}, wF1={valid/weighted_f1_epoch:.2f}, sP={valid/samples_precision_epoch:.2f},
+      sR={valid/samples_recall_epoch:.2f}, sF1={valid/samples_f1_epoch:.2f}
+    monitor: valid/weighted_f1_epoch
+    save_top_k: 100
+    mode: max
+    save_last: true
+    verbose: false
+    save_weights_only: true
+    auto_insert_metric_name: false
+  early_stop_callback:
+    monitor: valid/weighted_f1_epoch
+    min_delta: 0.01
+    patience: 200
+    mode: max
+  swa_callback: null
+  dataset:
+    dataset:
+      name: TCDB_tc
+    max_len: 2000
+    mini_set_ratio: null
+    label: length
+    split: null
+    min_len: 200
+    n_pos: 10
+    n_neg: 100
+  hparams:
+    hidden_dim: 640
+    out_dim: 320
+    esm_dim: 1280
+    dropout: 0.0
+    temperature: 0.1
+  nni:
+    auto_ml: false
+  optimizer:
+    name: AdamW
+    args:
+      lr: 0.0001
+      weight_decay: 0
+  scheduler:
+    name: null
+    args: null
+  cache_file: ./temp/contrastive/train_tc_embeddings.npy
+  select_labels: null

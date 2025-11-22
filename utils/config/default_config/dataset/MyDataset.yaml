@@ -1,0 +1,11 @@
+dataset:
+  dataset: 'MyDataset'
+  max_len: 410
+  mini_set_ratio: null
+  label: 'length'
+  split:
+    test_size: 0.2
+    valid_size: null
+    stratify: null
+    mode: null
+    q: null

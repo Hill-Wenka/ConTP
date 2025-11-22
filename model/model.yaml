@@ -1,0 +1,6 @@
+hparams:
+  hidden_dim: 640
+  out_dim: 320
+  esm_dim: 1280
+  dropout: 0.0
+  temperature: 0.1

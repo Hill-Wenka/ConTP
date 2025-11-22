@@ -1,0 +1,42 @@
+project: 'ConTP'
+nni:
+  auto_ml: false
+logger:
+  save_dir: './ckpt/ConTP/'
+trainer:
+  max_epochs: 500
+  gradient_clip_val: 1.0
+  gradient_clip_algorithm: norm
+  enable_checkpointing: true
+  num_sanity_val_steps: 2
+  accumulate_grad_batches: 1
+  #  val_check_interval: 2
+  check_val_every_n_epoch: 5
+  accelerator: gpu
+  devices: 1
+  strategy: auto
+progress_bar_callback:
+  refresh_rate: 1
+  process_position: 0
+ckpt_callback:
+  monitor: 'valid/weighted_f1_epoch'
+  filename: 'epoch={epoch:02d}, step={step:03d}, loss={valid/loss_epoch:.3f}, wP={valid/weighted_precision_epoch:.2f}, 
+  wR={valid/weighted_recall_epoch:.2f}, wF1={valid/weighted_f1_epoch:.2f}, sP={valid/samples_precision_epoch:.2f}, 
+  sR={valid/samples_recall_epoch:.2f}, sF1={valid/samples_f1_epoch:.2f}'
+  auto_insert_metric_name: false
+  save_weights_only: true
+  mode: 'max'
+  save_top_k: 100
+  save_last: true
+early_stop_callback:
+  monitor: 'valid/weighted_f1_epoch'
+  mode: 'max'
+swa_callback: null
+optimizer:
+  name: AdamW
+  args:
+    lr: 0.0001
+    weight_decay: 0
+scheduler:
+  name: null
+  args: null

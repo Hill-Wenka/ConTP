@@ -1,0 +1,35 @@
+dataset:
+  dataset:
+    name: 'TCDB_substrate'
+  max_len: 1200
+  min_len: 200
+  mini_set_ratio: null
+  label: 'length'
+  split: null
+  n_pos: 10
+  n_neg: 100
+train_dataloader:
+  batch_size: 100
+  num_workers: 50
+  shuffle: true
+  drop_last: false
+  pin_memory: true
+  persistent_workers: true
+valid_dataloader:
+  batch_size: 5000
+  num_workers: 30
+  shuffle: false
+  pin_memory: true
+  persistent_workers: true
+test_dataloader:
+  batch_size: 5000
+  num_workers: 20
+  shuffle: false
+  pin_memory: false
+  persistent_workers: false
+predict_dataloader:
+  batch_size: 5000
+  num_workers: 20
+  shuffle: false
+  pin_memory: false
+  persistent_workers: false
