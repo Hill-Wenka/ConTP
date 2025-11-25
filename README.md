@@ -32,6 +32,7 @@ Any questions or suggestions are welcome. You can:
 - [Environment Installation](#Environment-Installation)
 - [Usage](#Inference)
   - [Inference](#Inference)
+  - [Options](#Options)
   - [Reproduction](#Reproduction)
   - [Dataset](#Dataset)
 - [News](#News)
@@ -52,7 +53,7 @@ pip install torchvision torchaudio --index-url https://download.pytorch.org/whl/
 pip install ipywidgets jupyterlab tqdm numpy pandas lightning omegaconf biopython fair-esm scikit-learn h5py aaindex tensorboard
 ```
 
-### Inference
+## Inference
 
 Predict substrate specificity of given transporter proteins:
 
@@ -60,11 +61,59 @@ Predict substrate specificity of given transporter proteins:
 python ./script/predict.py --query_fasta ./temp/example.fasta --task substrate
 ```
 
+The results are located in ./temp
+
 Predict TC family of given transporter proteins:
 
 ```commandline
 python ./script/predict.py --query_fasta ./temp/example.fasta --task tc
 ```
+
+## Options
+
+Below is a full description of all available flags (adapted and expanded from ```-h```):
+
+### Required
+
+| Argument             | Description                                                                  |
+| -------------------- | ---------------------------------------------------------------------------- |
+| `--query_fasta PATH` | Path to the input FASTA file containing one or more query protein sequences. |
+
+### Prediction Task
+| Argument                | Description                                                                                                      |
+| ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| `--task {substrate,tc}` | Select prediction task: `substrate` for multi-label substrate classification; `tc` for TC family classification. |
+
+### Thresholding (for substrate prediction)
+| Argument            | Description                                                                                                             |
+| ------------------- |-------------------------------------------------------------------------------------------------------------------------|
+| `--threshold FLOAT` | Decision threshold for multi-label substrate classification. Default: `0.034`, which is determined in the training set. |
+
+### Device & Execution Settings
+| Argument           | Description                                     |
+| ------------------ |-------------------------------------------------|
+| `--device DEVICE`  | Computing device, e.g., `cuda:0` or `cpu`.      |
+| `--batch_size INT` | Batch size used for ESM-2 embedding extraction. |
+
+### Directories
+| Argument           | Description                                                |
+| ------------------ |------------------------------------------------------------|
+| `--out_dir PATH`   | Directory to save final prediction results.                |
+| `--temp_dir PATH`  | Directory for intermediate files (e.g. class embeddings).  |
+| `--esm_cache PATH` | Optional directory to store or load cached ESM embeddings. |
+
+### Model Checkpoints
+| Argument                | Description                                     |
+| ----------------------- | ----------------------------------------------- |
+| `--ckpt_substrate PATH` | Pretrained checkpoint for substrate prediction. |
+| `--ckpt_tc PATH`        | Pretrained checkpoint for TC classification.    |
+
+### Label Mapping Files
+| Argument               | Description                                                                      |
+| ---------------------- | -------------------------------------------------------------------------------- |
+| `--substrate_map PATH` | JSON file mapping substrate indices to substrate names (70 fine-grained labels). |
+| `--tc_map PATH`        | JSON file mapping TC family indices to TC numbers (>1,000 classes).              |
+
 
 ### Reproduction
 

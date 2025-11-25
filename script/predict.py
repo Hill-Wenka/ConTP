@@ -141,7 +141,8 @@ def run_inference(args):
     pred_df = pred_df[['header'] + columns]
 
     os.makedirs(args.out_dir, exist_ok=True)
-    save_path = f"{args.out_dir}/prediction.csv"
+    basename = os.path.splitext(os.path.basename(args.query_fasta))[0]
+    save_path = os.path.join(args.out_dir, f"{basename}_pred.csv")
     pred_df.to_csv(save_path, index=False)
     print(f"\nSaved prediction to: {save_path}")
 
