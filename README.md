@@ -77,7 +77,7 @@ The case study of CLIC6 (TCDB identifier: 1.A.12.1.4)
 python ./script/predict.py --query_fasta ./temp/CLIC6.fasta --task substrate --out_dir ./temp/output/ --save_dist
 ```
 
-A Jupyter notebook (```./script/debug.ipynb```) is provided for running inference in an interactive Python environment.
+A Jupyter notebook (```./script/predict.ipynb```) is provided for running inference in an interactive Python environment.
 This allows you to customize the prediction workflow, inspect intermediate representations (e.g., ESM embeddings,
 distance matrices), and perform advanced analyses tailored to your specific use cases.
 
