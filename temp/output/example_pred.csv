@@ -1,0 +1,101 @@
+header,substrate_top1
+substrate_id: [0],cation:calcium
+substrate_id: [0],cation:potassium
+substrate_id: [0],cation:calcium
+substrate_id: [0],cation:calcium
+substrate_id: [0],cation:calcium
+substrate_id: [2],cation:potassium
+substrate_id: [2],cation:potassium
+substrate_id: [3],cation:sodium
+substrate_id: [3],cation:sodium
+substrate_id: [4],cation:potassium
+substrate_id: [4],cation:potassium
+substrate_id: [4],cation:potassium
+substrate_id: [5],cation:potassium
+substrate_id: [5],cation:potassium
+substrate_id: [5],cation:potassium
+substrate_id: [5],cation:potassium
+substrate_id: [6],cation:calcium
+substrate_id: [6],cation:calcium
+substrate_id: [6],cation:calcium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [7],cation:potassium
+substrate_id: [8],cation:potassium
+substrate_id: [8],cation:potassium
+substrate_id: [9],cation:potassium
+substrate_id: [10],cation:potassium
+substrate_id: [10],cation:potassium
+substrate_id: [10],cation:potassium
+substrate_id: [12],cation:potassium
+substrate_id: [12],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:potassium
+substrate_id: [13],cation:calcium
+substrate_id: [13],cation:calcium
+substrate_id: [13],cation:caesium
+substrate_id: [14],cation:potassium
+substrate_id: [14],cation:potassium
+substrate_id: [15],cation:potassium
+substrate_id: [16],cation:potassium
+substrate_id: [16],cation:potassium
+substrate_id: [16],cation:potassium
+substrate_id: [17],cation:calcium
+substrate_id: [17],cation:others
+substrate_id: [17],others:others
+substrate_id: [20],amino acid:protein
+substrate_id: [20],amino acid:protein
+substrate_id: [22],amino acid:protein
+substrate_id: [22],lipid:phospholipid
+substrate_id: [23],cation:ammonium
+substrate_id: [23],cation:ammonium
+substrate_id: [23],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [24],cation:ammonium
+substrate_id: [25],cation:ammonium
+substrate_id: [25],cation:ammonium
+substrate_id: [26],cation:proton
+substrate_id: [26],cation:sodium
+substrate_id: [28],cation:calcium
+substrate_id: [28],cation:strontium
+substrate_id: [28],cation:magnesium
+substrate_id: [28],cation:magnesium
+substrate_id: [29],cation:cobalt
+substrate_id: [29],cation:magnesium
+substrate_id: [29],cation:magnesium
+substrate_id: [33],anion:others
+substrate_id: [37],amino acid:protein
+substrate_id: [37],amino acid:protein
+substrate_id: [37],others:others
+substrate_id: [38],anion:chloride
+substrate_id: [39],nucleic acid:nucleotide
+substrate_id: [39],amino acid:protein
+substrate_id: [39],cation:calcium
+substrate_id: [41],others:others
+substrate_id: [41],others:others
+substrate_id: [43],anion:chloride
+substrate_id: [43],anion:chloride
+substrate_id: [43],anion:chloride
+substrate_id: [44],nucleic acid:DNA
+substrate_id: [44],cation:sodium
+substrate_id: [44],cation:calcium
+substrate_id: [44],cation:calcium
+substrate_id: [44],cation:sodium
+substrate_id: [45],others:others

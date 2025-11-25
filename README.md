@@ -71,6 +71,12 @@ Predict TC family of given transporter proteins:
 python ./script/predict.py --query_fasta ./temp/example.fasta --task tc --out_dir ./temp/output/ --save_dist
 ```
 
+The case study of CLIC6 (TCDB identifier: 1.A.12.1.4)
+
+```commandline
+python ./script/predict.py --query_fasta ./temp/CLIC6.fasta --task substrate --out_dir ./temp/output/ --save_dist
+```
+
 A Jupyter notebook (```./script/debug.ipynb```) is provided for running inference in an interactive Python environment.
 This allows you to customize the prediction workflow, inspect intermediate representations (e.g., ESM embeddings,
 distance matrices), and perform advanced analyses tailored to your specific use cases.
@@ -106,10 +112,10 @@ Below is a full description of all available flags (adapted and expanded from ``
 
 ### Output Options
 
-| Argument           | Description                                                |
-|--------------------|------------------------------------------------------------|
-| `--out_dir PATH`   | Directory to save final prediction results.                |
-| `--esm_cache PATH` | Optional directory to store or load cached ESM embeddings. |
+| Argument           | Description                                                                                                                                                                                              |
+|--------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `--out_dir PATH`   | Directory to save final prediction results.                                                                                                                                                              |
+| `--esm_cache PATH` | Optional directory to store or load cached ESM embeddings.                                                                                                                                               |
 | `--save_dist`      | If set, saves the full distance matrix for all query sequences as a CSV file named `{basename}_dist.csv` in the output directory. Useful for advanced analysis, custom decision logic, or visualization. |
 
 ### Model Checkpoints
