@@ -2,13 +2,15 @@
 
 ## Introduction
 
-This repository contains the official implementation of the ConTP inference workflow, designed for high-resolution functional annotation of membrane transporters.
+This repository contains the official implementation of the ConTP inference workflow, designed for high-resolution
+functional annotation of membrane transporters.
 ConTP leverages contrastive learning to disentangle functional determinants from overall sequence similarity, enabling:
 
 - Fine-grained substrate specificity prediction, and
 - TC (Transporter Classification) family assignment
 
-The provided pipeline allows users to reproduce the results reported in the manuscript and apply ConTP to annotate novel transporter sequences.
+The provided pipeline allows users to reproduce the results reported in the manuscript and apply ConTP to annotate novel
+transporter sequences.
 
 This work is supported by
 [Structural and Functional Bioinformatics Research Group (SFB) group in KAUST](https://sfb.kaust.edu.sa/),
@@ -31,10 +33,10 @@ Any questions or suggestions are welcome. You can:
 - [Introduction](#Introduction)
 - [Environment Installation](#Environment-Installation)
 - [Usage](#Inference)
-  - [Inference](#Inference)
-  - [Options](#Options)
-  - [Reproduction](#Reproduction)
-  - [Dataset](#Dataset)
+    - [Inference](#Inference)
+    - [Options](#Options)
+    - [Reproduction](#Reproduction)
+    - [Dataset](#Dataset)
 - [News](#News)
 
 </details>
@@ -58,7 +60,7 @@ pip install ipywidgets jupyterlab tqdm numpy pandas lightning omegaconf biopytho
 Predict substrate specificity of given transporter proteins:
 
 ```commandline
-python ./script/predict.py --query_fasta ./temp/example.fasta --task substrate
+python ./script/predict.py --query_fasta ./temp/example.fasta --task substrate --out_dir ./temp/output/ --save_dist
 ```
 
 The results are located in ./temp
@@ -66,8 +68,12 @@ The results are located in ./temp
 Predict TC family of given transporter proteins:
 
 ```commandline
-python ./script/predict.py --query_fasta ./temp/example.fasta --task tc
+python ./script/predict.py --query_fasta ./temp/example.fasta --task tc --out_dir ./temp/output/ --save_dist
 ```
+
+A Jupyter notebook (```./script/debug.ipynb```) is provided for running inference in an interactive Python environment.
+This allows you to customize the prediction workflow, inspect intermediate representations (e.g., ESM embeddings,
+distance matrices), and perform advanced analyses tailored to your specific use cases.
 
 ## Options
 
@@ -76,44 +82,49 @@ Below is a full description of all available flags (adapted and expanded from ``
 ### Required
 
 | Argument             | Description                                                                  |
-| -------------------- | ---------------------------------------------------------------------------- |
+|----------------------|------------------------------------------------------------------------------|
 | `--query_fasta PATH` | Path to the input FASTA file containing one or more query protein sequences. |
 
 ### Prediction Task
+
 | Argument                | Description                                                                                                      |
-| ----------------------- | ---------------------------------------------------------------------------------------------------------------- |
+|-------------------------|------------------------------------------------------------------------------------------------------------------|
 | `--task {substrate,tc}` | Select prediction task: `substrate` for multi-label substrate classification; `tc` for TC family classification. |
 
 ### Thresholding (for substrate prediction)
+
 | Argument            | Description                                                                                                             |
-| ------------------- |-------------------------------------------------------------------------------------------------------------------------|
+|---------------------|-------------------------------------------------------------------------------------------------------------------------|
 | `--threshold FLOAT` | Decision threshold for multi-label substrate classification. Default: `0.034`, which is determined in the training set. |
 
 ### Device & Execution Settings
+
 | Argument           | Description                                     |
-| ------------------ |-------------------------------------------------|
+|--------------------|-------------------------------------------------|
 | `--device DEVICE`  | Computing device, e.g., `cuda:0` or `cpu`.      |
 | `--batch_size INT` | Batch size used for ESM-2 embedding extraction. |
 
-### Directories
+### Output Options
+
 | Argument           | Description                                                |
-| ------------------ |------------------------------------------------------------|
+|--------------------|------------------------------------------------------------|
 | `--out_dir PATH`   | Directory to save final prediction results.                |
-| `--temp_dir PATH`  | Directory for intermediate files (e.g. class embeddings).  |
 | `--esm_cache PATH` | Optional directory to store or load cached ESM embeddings. |
+| `--save_dist`      | If set, saves the full distance matrix for all query sequences as a CSV file named `{basename}_dist.csv` in the output directory. Useful for advanced analysis, custom decision logic, or visualization. |
 
 ### Model Checkpoints
+
 | Argument                | Description                                     |
-| ----------------------- | ----------------------------------------------- |
+|-------------------------|-------------------------------------------------|
 | `--ckpt_substrate PATH` | Pretrained checkpoint for substrate prediction. |
 | `--ckpt_tc PATH`        | Pretrained checkpoint for TC classification.    |
 
 ### Label Mapping Files
+
 | Argument               | Description                                                                      |
-| ---------------------- | -------------------------------------------------------------------------------- |
+|------------------------|----------------------------------------------------------------------------------|
 | `--substrate_map PATH` | JSON file mapping substrate indices to substrate names (70 fine-grained labels). |
 | `--tc_map PATH`        | JSON file mapping TC family indices to TC numbers (>1,000 classes).              |
-
 
 ### Reproduction
 
@@ -135,3 +146,4 @@ Below is a full description of all available flags (adapted and expanded from ``
 - **2025/11/22**: Upload the TP-Substrate and TP-TC benchmark.
 - **2025/11/23**: Update inference codes.
 - **2025/11/24**: Update a jupyter notebook to reproduce the result.
+- **2025/11/25**: Refine the inference output logic and README.

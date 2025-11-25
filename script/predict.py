@@ -75,19 +75,21 @@ def run_inference(args):
     if args.task == 'substrate':
         ckpt_path = args.ckpt_substrate
         label_map = pd.read_csv(args.substrate_map)
+        temp_dir = "./temp/inference_substrate/"
     else:  # tc
         ckpt_path = args.ckpt_tc
         label_map = pd.read_csv(args.tc_map)
+        temp_dir = "./temp/inference_tc/"
 
     # ====== Initialize model ======
-    os.makedirs(args.temp_dir, exist_ok=True)
+    os.makedirs(temp_dir, exist_ok=True)
     predictor = LitModelInference(ConTPModule, ConTPDataModule, ckpt_path)
 
     # ====== Load class embeddings ======
-    cache_file = f'{args.temp_dir}/class_embeddings.pth'
+    cache_file = f'{temp_dir}/class_embeddings.pth'
     if os.path.exists(cache_file):
         class_embeddings = torch.load(cache_file, weights_only=False)
-        select_cluster = np.load(f'{args.temp_dir}/select_cluster.npy')
+        select_cluster = np.load(f'{temp_dir}/select_cluster.npy')
         print("Loaded cached class embeddings.")
     else:
         raise FileNotFoundError(f"Missing class embeddings at {cache_file}")
@@ -146,6 +148,27 @@ def run_inference(args):
     pred_df.to_csv(save_path, index=False)
     print(f"\nSaved prediction to: {save_path}")
 
+    if args.save_dist:
+        # Convert dist → numpy
+        dist_np = dist.detach().cpu().numpy()  # shape (num_query, num_classes)
+
+        # Get original class labels
+        if args.task == "substrate":
+            class_names = label_map["substrate"].tolist()
+        else:
+            class_names = [label_map.loc[i, 'tcid'] for i in select_cluster]
+
+        # Construct DataFrame
+        dist_df = pd.DataFrame(dist_np, columns=class_names)
+
+        # Insert FASTA headers as first column
+        dist_df.insert(0, "header", query_headers)
+
+        # Save
+        dist_save_path = os.path.join(args.out_dir, f"{basename}_dist.csv")
+        dist_df.to_csv(dist_save_path, index=False)
+        print(f"Saved distance matrix to: {dist_save_path}")
+
 
 # ============================================================
 # argparse configuration
@@ -168,9 +191,11 @@ def build_args():
     parser.add_argument("--batch_size", type=int, default=20,
                         help="Batch size used for ESM embedding extraction.")
 
+    parser.add_argument("--save_dist", action="store_true",
+                        help="If set, save the distance matrix for all queries.")
+
     # -------- Directory arguments --------
     parser.add_argument("--out_dir", type=str, default="./temp/output/")
-    parser.add_argument("--temp_dir", type=str, default="./temp/inference_substrate/")
     parser.add_argument("--esm_cache", type=str, default="./temp/esm/")
 
     # -------- Model checkpoint --------
