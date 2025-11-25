@@ -135,7 +135,7 @@ Below is a full description of all available flags (adapted and expanded from ``
 ### Reproduction
 
 - Download the preprocessed dataset
-  from [Google Drive](https://drive.usercontent.google.com/open?id=1VAekBVKyqqYjy6qofbl4TEzibWck1Vx6&authuser=1).
+  from [Google Drive](https://drive.google.com/file/d/1VAekBVKyqqYjy6qofbl4TEzibWck1Vx6/view?usp=drive_link).
 - Move the downloaded archive into the current project directory and extract it into the ```./dataset/``` folder.
 - The Jupyter notebook ```./script/debug.ipynb``` provides a minimal example for reproducing the results reported in the
   paper.
