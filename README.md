@@ -153,3 +153,4 @@ Below is a full description of all available flags (adapted and expanded from ``
 - **2025/11/23**: Update inference codes.
 - **2025/11/24**: Update a jupyter notebook to reproduce the result.
 - **2025/11/25**: Refine the inference output logic and README.
+- **2025/12/01**: Add generative model evaluation.
