@@ -1,0 +1,176 @@
+ConTP Research and Non-Commercial License
+
+Copyright (c) 2026 Wenjia He
+All rights reserved.
+
+1. Definitions
+
+"Software" means the ConTP software, including its source code,
+documentation, associated files, and any modifications or derivative
+works thereof made available under this License.
+
+"Permitted Research Use" means use of the Software for academic,
+scientific, educational, evaluation, or internal research purposes,
+provided that the Software is not used as part of a commercial
+product, paid service, or commercial deployment.
+
+Permitted Research Use may be conducted by individuals, universities,
+academic institutions, non-profit organizations, research institutes,
+or commercial entities. The commercial or non-commercial status of
+the user or organization alone does not determine whether a use is
+permitted under this License.
+
+"Commercial Use" means use of the Software, directly or indirectly,
+as part of a product, service, deployment, or other activity that is
+offered commercially or generates revenue, or is intended to provide
+a commercial product or service to customers or other third parties.
+
+2. Permission for Research Use
+
+Subject to the terms and conditions of this License, the copyright
+holder grants you a non-exclusive, worldwide, royalty-free,
+non-transferable license to use, reproduce, and modify the Software
+for Permitted Research Use.
+
+Permitted Research Use includes, but is not limited to:
+
+(a) academic and scientific research at universities and research
+    institutions;
+
+(b) teaching and educational use;
+
+(c) research and evaluation by non-profit organizations;
+
+(d) internal research, testing, benchmarking, and evaluation by
+    commercial companies, provided that such use does not constitute
+    Commercial Use as defined in Section 4; and
+
+(e) reproduction of research results and evaluation of the Software
+    for scientific purposes.
+
+No separate permission from the copyright holder is required for
+Permitted Research Use.
+
+3. Conditions
+
+Any copy or substantial portion of the Software, whether modified or
+unmodified, must retain:
+
+(a) this copyright notice;
+
+(b) this License; and
+
+(c) a clear notice identifying any modifications made to the original
+    Software.
+
+Use of the Software in academic publications should appropriately cite
+the associated publication and/or archived software release when
+applicable.
+
+Distribution of the Software or modified versions of the Software to
+third parties is permitted only for academic, scientific, educational,
+or other non-commercial research purposes and must include a copy of
+this License.
+
+4. Commercial Use
+
+Commercial Use of the Software is NOT permitted under this License
+without prior written authorization from the copyright holder.
+
+Commercial Use includes, but is not limited to:
+
+(a) incorporating the Software, in whole or in part, into a commercial
+    product;
+
+(b) incorporating the Software into a paid or revenue-generating
+    service;
+
+(c) offering functionality based on the Software to customers or
+    third parties as part of a paid product or service;
+
+(d) deploying the Software as part of a commercial production system
+    or commercial customer-facing system;
+
+(e) selling, sublicensing, or commercially distributing the Software
+    or a derivative work; or
+
+(f) using the Software to provide paid consulting, analysis,
+    computation, software-as-a-service, or other services to third
+    parties.
+
+For clarity, use of the Software by a for-profit company solely for
+internal research, experimentation, testing, benchmarking, or
+evaluation is considered Permitted Research Use and does NOT, by
+itself, constitute Commercial Use.
+
+However, if the Software or a derivative work is subsequently
+incorporated into, deployed as part of, or used to provide a
+commercial product or paid service, prior written authorization and
+a separate commercial license are required.
+
+For commercial licensing inquiries, please contact:
+
+Wenjia He
+wenjia.he@kaust.edu.sa
+
+5. No Trademark or Endorsement Rights
+
+This License does not grant permission to use the names, trademarks,
+service marks, logos, institutional affiliations, or other identifying
+marks of the copyright holder, authors, contributors, or their
+affiliated institutions for advertising, promotion, endorsement, or
+any other purpose without prior written permission.
+
+6. Third-Party Components
+
+The Software may include or depend upon third-party software,
+libraries, models, datasets, or other materials that are subject to
+separate license terms.
+
+This License applies only to portions of the Software for which the
+copyright holder has the authority to grant a license.
+
+This License does not modify, replace, or supersede the license terms
+applicable to any third-party materials. Users are responsible for
+complying with all applicable third-party licenses.
+
+7. Disclaimer of Warranty
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND
+NONINFRINGEMENT.
+
+IN NO EVENT SHALL THE COPYRIGHT HOLDER, AUTHORS, OR CONTRIBUTORS BE
+LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN
+ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN
+CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+8. Termination
+
+Any violation of the terms of this License automatically terminates
+the rights granted to you under this License.
+
+Upon termination, you must cease all use and distribution of the
+Software that is authorized solely by this License.
+
+9. Commercial Licensing
+
+Commercial rights are expressly reserved.
+
+Organizations or individuals wishing to use the Software for
+Commercial Use may contact the copyright holder to request a separate
+commercial license.
+
+The terms of any commercial license, including any applicable fees,
+permissions, limitations, and obligations, will be established
+separately in writing.
+
+10. Other Rights
+
+No rights are granted except those expressly stated in this License.
+
+All rights not expressly granted under this License, including all
+rights relating to Commercial Use, are reserved by the copyright
+holder.
